@@ -9,7 +9,8 @@ gem 'jquery-rails'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
+# gem 'mysql2'
+gem 'pg'
 
 # for JavaScript runtime in linux os
 if HOST_OS =~ /linux/i
