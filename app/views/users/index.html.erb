@@ -1,23 +1,30 @@
-<h1>Listing users</h1>
+<div class="logo-center">
+  <%= link_to image_tag("logo.png", alt: "Rails"), 'http://idias.usu.edu/scape' %>
+</div>
 
-<table>
-  <tr>
-    <th>Username</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="center hero-unit">
 
-<% @users.each do |user| %>
-  <tr>
-    <td><%= user.username %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
+  <h1>Scape Data Collection</h1>
 
-<br />
+  <table>
+    <tr>
+      <th>Humans</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
 
-<%= link_to 'New User', new_user_path %>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.username %></td>
+      <td><%#= link_to 'Show', user %></td>
+      <td><%#= link_to 'Edit', edit_user_path(user) %></td>
+      <td><%#= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></td>
+    </tr>
+  <% end %>
+  </table>
+
+  <br />
+</div>
+
+<%#= link_to 'New User', new_user_path %>
