@@ -1,7 +1,7 @@
 Scape::Application.routes.draw do
-  resources :answers
-
   resources :exams
+
+  resources :answers
 
   resources :questions
 

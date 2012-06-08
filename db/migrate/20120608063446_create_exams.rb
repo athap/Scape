@@ -1,10 +1,10 @@
 class CreateExams < ActiveRecord::Migration
   def change
     create_table :exams do |t|
-      t.int :user_id
-      t.int :question_id
-      t.int :level
-      t.int :selected_answer_index
+      t.integer :user_id
+      t.integer :question_id
+      t.integer :level
+      t.integer :selected_answer_index
 
       t.timestamps
     end

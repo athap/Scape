@@ -3,10 +3,10 @@ require 'spec_helper'
 describe "exams/new" do
   before(:each) do
     assign(:exam, stub_model(Exam,
-      :user_id => "",
-      :question_id => "",
-      :level => "",
-      :selected_answer_index => ""
+      :user_id => 1,
+      :question_id => 1,
+      :level => 1,
+      :selected_answer_index => 1
     ).as_new_record)
   end
 

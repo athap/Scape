@@ -4,16 +4,16 @@ describe "exams/index" do
   before(:each) do
     assign(:exams, [
       stub_model(Exam,
-        :user_id => "",
-        :question_id => "",
-        :level => "",
-        :selected_answer_index => ""
+        :user_id => 1,
+        :question_id => 2,
+        :level => 3,
+        :selected_answer_index => 4
       ),
       stub_model(Exam,
-        :user_id => "",
-        :question_id => "",
-        :level => "",
-        :selected_answer_index => ""
+        :user_id => 1,
+        :question_id => 2,
+        :level => 3,
+        :selected_answer_index => 4
       )
     ])
   end
@@ -21,9 +21,9 @@ describe "exams/index" do
   it "renders a list of exams" do
     render
     # Run the generator again with the --webrat flag if you want to use webrat matchers
-    assert_select "tr>td", :text => "".to_s, :count => 2
-    assert_select "tr>td", :text => "".to_s, :count => 2
-    assert_select "tr>td", :text => "".to_s, :count => 2
-    assert_select "tr>td", :text => "".to_s, :count => 2
+    assert_select "tr>td", :text => 1.to_s, :count => 2
+    assert_select "tr>td", :text => 2.to_s, :count => 2
+    assert_select "tr>td", :text => 3.to_s, :count => 2
+    assert_select "tr>td", :text => 4.to_s, :count => 2
   end
 end

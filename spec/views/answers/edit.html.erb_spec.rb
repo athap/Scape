@@ -4,9 +4,9 @@ describe "answers/edit" do
   before(:each) do
     @answer = assign(:answer, stub_model(Answer,
       :description => "MyString",
-      :score => "",
+      :score => 1,
       :feedback => "MyString",
-      :index => ""
+      :index => 1
     ))
   end
 

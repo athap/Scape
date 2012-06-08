@@ -1,5 +1,7 @@
 require 'spec_helper'
 
 describe Answer do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "should belongs to question" do
+  	it { should belong_to(:question) }
+  end
 end

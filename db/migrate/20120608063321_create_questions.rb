@@ -3,7 +3,7 @@ class CreateQuestions < ActiveRecord::Migration
     create_table :questions do |t|
       t.string :identifier
       t.string :description
-      t.int :correct_answer_index
+      t.integer :correct_answer_index
 
       t.timestamps
     end

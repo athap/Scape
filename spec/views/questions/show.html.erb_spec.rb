@@ -5,7 +5,7 @@ describe "questions/show" do
     @question = assign(:question, stub_model(Question,
       :identifier => "Identifier",
       :description => "Description",
-      :correct_answer_index => ""
+      :correct_answer_index => 1
     ))
   end
 
@@ -14,6 +14,6 @@ describe "questions/show" do
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     rendered.should match(/Identifier/)
     rendered.should match(/Description/)
-    rendered.should match(//)
+    rendered.should match(/1/)
   end
 end

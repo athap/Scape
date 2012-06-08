@@ -1,5 +1,8 @@
 require 'spec_helper'
 
 describe Exam do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "should belong to user and question" do
+  	it { should belong_to(:user) }
+  	it { should belong_to(:question) }
+  end
 end

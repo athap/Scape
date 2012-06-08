@@ -4,9 +4,9 @@ describe "answers/new" do
   before(:each) do
     assign(:answer, stub_model(Answer,
       :description => "MyString",
-      :score => "",
+      :score => 1,
       :feedback => "MyString",
-      :index => ""
+      :index => 1
     ).as_new_record)
   end
 

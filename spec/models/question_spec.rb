@@ -1,5 +1,11 @@
 require 'spec_helper'
 
 describe Question do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "should have many users through exams" do
+  	it { should have_many(:users).through(:exams) }
+  end
+
+  describe "should have many answers" do
+  	it { should have_many(:answers) }
+  end
 end

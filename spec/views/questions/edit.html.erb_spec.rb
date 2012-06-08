@@ -5,7 +5,7 @@ describe "questions/edit" do
     @question = assign(:question, stub_model(Question,
       :identifier => "MyString",
       :description => "MyString",
-      :correct_answer_index => ""
+      :correct_answer_index => 1
     ))
   end
 

@@ -5,12 +5,13 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.1'
 gem 'jquery-rails'
+gem 'pg'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 # gem 'mysql2'
-gem 'pg'
+
 
 # for JavaScript runtime in linux os
 if HOST_OS =~ /linux/i
@@ -34,6 +35,10 @@ group :development, :test do
   gem 'debugger'
   gem 'rspec-rails', '2.10.0'
   gem 'annotate', '~> 2.4.1.beta'
+end
+
+group :test do
+	gem 'shoulda-matchers', '>= 1.0.0'
 end
 
 # To use ActiveModel has_secure_password
