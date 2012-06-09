@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   # Processing by UsersController#create as HTML
   # Parameters: {"utf8"=>"✓", "authenticity_token"=>"TtCFRi9/iDlr63Evzlp8LlA8d8WN6gW6iKWkOCoyVGk=", 
   # "user"=>{"username"=>"abc"}, "commit"=>"Create User"}
-  
+
   # POST /users
   # POST /users.json
   # data = { 
@@ -37,9 +37,8 @@ class UsersController < ApplicationController
   #      :question =>  {:desc => "foo", :level => "1", :selected => 2}
   #    }]}
   def create
-    @user = User.new(params[:user])
-    #debugger
-    #@user.save
+    @user = User.new(:username => params[:username])
+    @user.save
     #@user.record_exam(params)
     respond_to do |format|
       format.html { render :status => 200, :text => 'done' }

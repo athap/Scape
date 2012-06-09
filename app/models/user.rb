@@ -14,6 +14,5 @@ class User < ActiveRecord::Base
 
 	def record_exam(params)
 		questions = params[:questions]
-		debugger
 	end
 end
