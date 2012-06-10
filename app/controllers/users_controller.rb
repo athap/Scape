@@ -18,32 +18,16 @@ class UsersController < ApplicationController
       format.json { render json: @user }
     end
   end
-
-
-  # Started POST "/users" for 127.0.0.1 at 2012-06-09 15:22:40 -0600
-  # Processing by UsersController#create as HTML
-  # Parameters: {"utf8"=>"✓", "authenticity_token"=>"TtCFRi9/iDlr63Evzlp8LlA8d8WN6gW6iKWkOCoyVGk=", 
-  # "user"=>{"username"=>"abc"}, "commit"=>"Create User"}
-
-  # POST /users
-  # POST /users.json
-  # data = { 
-  #  :user => {:username => 'foo'}, 
-  #  :questions => [ 
-  #    {
-  #      :question => {:desc => "bar", :level => 1, :selected => 1}
-  #    }, 
-  #    {
-  #      :question =>  {:desc => "foo", :level => "1", :selected => 2}
-  #    }]}
+  
+  # curl --data "username=foo&level=1&quizzes[]=L1Q1:1&quizzes[]=L1Q2:2&quizzes[]=L1Q3:3" 127.0.0.1:3000/users
   def create
     @user = User.new(:username => params[:username])
+
     @user.save
-    #@user.record_exam(params)
+    @user.record_exam(params)
+
     respond_to do |format|
       format.html { render :status => 200, :text => 'done' }
     end
-
   end
-
 end

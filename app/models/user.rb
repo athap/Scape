@@ -13,6 +13,11 @@ class User < ActiveRecord::Base
 	has_many :questions, :through => :exams
 
 	def record_exam(params)
-		questions = params[:questions]
+		quizzes = params[:quizzes]
+		level = params[:level]
+
+		quizzes.map do |quiz|
+			Exam.write(level, quiz, self)
+		end
 	end
 end
