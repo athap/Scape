@@ -19,4 +19,18 @@ class Question < ActiveRecord::Base
 
 	validates :identifier, :description, :correct_answer_index, :presence => true
 	validates :correct_answer_index, :inclusion => 0..3
+
+	def selected_answer(selected_answer_index)
+		get_answer_from_index(selected_answer_index)
+	end
+
+	def correct_answer
+		get_answer_from_index(self.correct_answer_index)
+	end
+
+	private
+
+	def get_answer_from_index(index)
+		self.answers[index]
+	end
 end

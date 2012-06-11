@@ -2,20 +2,24 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.all(:order => 'created_at DESC')
+    most_recent_user = @users.first
+    @exams = most_recent_user.exams
 
     respond_to do |format|
       format.html #
       format.json { render json: @users }
+
     end
   end
 
-  def new
-    @user = User.new
+  def show
+    user = User.find(params[:id])
+    @exams = user.exams
 
     respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @user }
+      format.html #
+      format.js
     end
   end
   

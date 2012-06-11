@@ -79,6 +79,7 @@ footer {
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: #999;
+  float: center;
 }
 
 footer a {
@@ -90,7 +91,7 @@ footer a:hover {
 }
 
 footer small {
-  float: left;
+   float: left;
 }
 
 footer ul {
@@ -99,6 +100,6 @@ footer ul {
 }
 
 footer ul li {
-  float: left;
-  margin-left: 10px;
+  float: left; 
+  margin-left: 10px; 
 }

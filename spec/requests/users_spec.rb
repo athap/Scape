@@ -8,4 +8,12 @@ describe "Users" do
       response.status.should be(200)
     end
   end
+
+  describe "Home page" do
+  	it "should have the content 'Scape Data Collection' and Humans" do
+  		visit users_path
+  		page.should have_content('Scape Data Collection')
+  		page.should have_content('Humans')
+  	end
+  end
 end
