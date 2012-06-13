@@ -6,9 +6,12 @@
 #  username   :string(255)
 #  created_at :datetime        not null
 #  updated_at :datetime        not null
+#  teacher_id :integer
 #
 
 class User < ActiveRecord::Base
+
+	belongs_to :teacher
 	has_many :exams
 	has_many :questions, :through => :exams
 

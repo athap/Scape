@@ -6,10 +6,10 @@
 #  description :string(255)
 #  score       :integer
 #  feedback    :string(255)
-#  index       :integer
 #  created_at  :datetime        not null
 #  updated_at  :datetime        not null
 #  question_id :integer
+#  identifier  :string(255)
 #
 
 require 'spec_helper'

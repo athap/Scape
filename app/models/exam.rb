@@ -2,21 +2,20 @@
 #
 # Table name: exams
 #
-#  id                    :integer         not null, primary key
-#  user_id               :integer
-#  question_id           :integer
-#  level                 :integer
-#  selected_answer_index :integer
-#  created_at            :datetime        not null
-#  updated_at            :datetime        not null
+#  id                         :integer         not null, primary key
+#  user_id                    :integer
+#  question_id                :integer
+#  level                      :integer
+#  created_at                 :datetime        not null
+#  updated_at                 :datetime        not null
+#  selected_answer_identifier :string(255)
 #
 
 class Exam < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :question
 
-  validates :user_id, :question_id, :level, :selected_answer_index, :presence => true
-  validates :selected_answer_index, :inclusion => 0..3
+  validates :user_id, :question_id, :level, :selected_answer_identifier, :presence => true
 
   def question
     @question = Question.find(self.question_id) rescue nil
@@ -25,7 +24,7 @@ class Exam < ActiveRecord::Base
 
   def selected_answer
     return "No selected answer" unless @question
-    @selected_answer = @question.selected_answer(selected_answer_index)
+    @selected_answer = @question.selected_answer(self.selected_answer_identifier)
     @selected_answer.description
   end
 
@@ -44,13 +43,14 @@ class Exam < ActiveRecord::Base
 
   def self.write(level, quiz, user)
   	exam_arr = quiz.split(':')
-  	question = Question.find_by_identifier(exam_arr[0]) rescue nil  	
-  	selected_ans = exam_arr[1].to_i
+  	question = Question.find_by_identifier(exam_arr[0]) 	
+  	#selected_ans = exam_arr[1].to_i
+    selected_ans_identifier = exam_arr[1]
 
   	Exam.create(
   		:user_id => user.id, 
   		:question_id => question.id, 
   		:level => level, 
-  		:selected_answer_index => selected_ans)
+  		:selected_answer_identifier => selected_ans_identifier)
   end
 end

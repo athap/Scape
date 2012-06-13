@@ -1,5 +1,6 @@
 Scape::Application.routes.draw do
   resources :exams
+  resources :teachers
 
   resources :answers
 

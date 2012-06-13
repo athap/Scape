@@ -6,14 +6,27 @@
   <h1>Scape Data Collection</h1>
 </div>
 
+<div class="teachers-table table table-striped">
+  <table>
+    <thead>
+      <tr>
+        <th>Teachers</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render :partial => 'teachers', :collection => @teachers, :as => :teacher %>      
+    </tbody> 
+  </table>  
+</div>
+
 <div class="users-table table table-striped">
   <table>
     <thead>
       <tr>
-        <th>Humans</th>
+        <th>Students</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody id="users">
       <%= render @users %>      
     </tbody> 
   </table>  

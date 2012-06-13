@@ -1,0 +1,1 @@
+{"klass":"Taps::Push","database_url":"postgres://postgres@localhost/scape_development?encoding=utf8","remote_url":"http://heroku:osui59a24am79x@taps19.heroku.com","session_uri":"/sessions/6030333517","stream_state":{},"completed_tables":["schema_migrations"],"table_filter":null,"local_tables_info":{"schema_migrations":5,"users":5,"questions":24,"exams":15,"answers":20}}

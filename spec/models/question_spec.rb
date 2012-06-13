@@ -2,12 +2,12 @@
 #
 # Table name: questions
 #
-#  id                   :integer         not null, primary key
-#  identifier           :string(255)
-#  description          :string(255)
-#  correct_answer_index :integer
-#  created_at           :datetime        not null
-#  updated_at           :datetime        not null
+#  id                        :integer         not null, primary key
+#  identifier                :string(255)
+#  description               :string(255)
+#  created_at                :datetime        not null
+#  updated_at                :datetime        not null
+#  correct_answer_identifier :string(255)
 #
 
 require 'spec_helper'
@@ -24,32 +24,6 @@ describe Question do
   describe "should validate presence of identifier, description and correct_answer_index" do
   	it { should validate_presence_of(:identifier) }
   	it { should validate_presence_of(:description) }
-  	it { should validate_presence_of(:correct_answer_index) }
-  end
-
-  describe "validate correct answer index range" do
-    before :each do
-      @question = Question.new(:identifier => "foo", :description => "bar")
-    end
-
-    it "should be invalid" do
-      @question.correct_answer_index = -1
-      @question.should_not be_valid
-    end
-
-    it "should be invalid" do
-      @question.correct_answer_index = 4
-      @question.should_not be_valid
-    end
-
-    it "should be valid" do
-      @question.correct_answer_index = 0
-      @question.should be_valid
-    end
-
-    it "should be valid" do
-      @question.correct_answer_index = 3
-      @question.should be_valid
-    end
+  	it { should validate_presence_of(:correct_answer_identifier) }
   end
 end

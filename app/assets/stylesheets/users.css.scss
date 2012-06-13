@@ -1,12 +1,17 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.teachers-table {
+	width: 15%;
+	float: left;
+}
 .users-table {
-	width: 25%;
+	width: 15%;
 	float: left;
 }
 .quizzes-table {
-	width: 75%;
+	width: 70%;
 	float: right;
 }
 
