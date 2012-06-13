@@ -18,11 +18,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    user = User.find(params[:id])
-    @exams = user.exams
+    user = User.find(params[:id]) rescue nil
+    @exams = user.exams if user
 
     respond_to do |format|
-      format.html #
+      format.html { render text: "Sorry, you cannot view this :(", status: 403 }
       format.js
     end
   end
