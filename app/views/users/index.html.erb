@@ -1,7 +1,3 @@
-<div class="logo-center">
-  <%#= link_to image_tag("logo.png", alt: "Rails"), 'http://idias.usu.edu/scape' %>
-</div>
-
 <div class="center hero-unit">
   <h1>Scape Data Collection</h1>
 </div>
@@ -14,7 +10,7 @@
       </tr>
     </thead>
     <tbody>
-      <%= render :partial => 'teachers', :collection => @teachers, :as => :teacher %>      
+      <%= render :partial => 'teachers', :collection => @teachers, :as => :teacher %>
     </tbody> 
   </table>  
 </div>
@@ -27,7 +23,8 @@
       </tr>
     </thead>
     <tbody id="users">
-      <%= render @users %>      
+      <%= render @users %>
+      
     </tbody> 
   </table>  
 </div>

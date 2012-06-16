@@ -17,7 +17,7 @@ class Question < ActiveRecord::Base
 	has_many :exams
 	has_many :users, :through => :exams
 
-	validates :identifier, :description, :correct_answer_identifier, :presence => true
+	validates :identifier, :description, :presence => true
 
 	def selected_answer(selected_answer_identifier)
 		get_answer_from_identifier(selected_answer_identifier)

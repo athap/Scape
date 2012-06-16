@@ -6,14 +6,12 @@ describe "answers/index" do
       stub_model(Answer,
         :description => "Description",
         :score => 1,
-        :feedback => "Feedback",
-        :index => 2
+        :feedback => "Feedback"
       ),
       stub_model(Answer,
         :description => "Description",
         :score => 1,
-        :feedback => "Feedback",
-        :index => 2
+        :feedback => "Feedback"
       )
     ])
   end
@@ -24,6 +22,5 @@ describe "answers/index" do
     assert_select "tr>td", :text => "Description".to_s, :count => 2
     assert_select "tr>td", :text => 1.to_s, :count => 2
     assert_select "tr>td", :text => "Feedback".to_s, :count => 2
-    assert_select "tr>td", :text => 2.to_s, :count => 2
   end
 end

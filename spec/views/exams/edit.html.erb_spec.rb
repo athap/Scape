@@ -6,7 +6,7 @@ describe "exams/edit" do
       :user_id => 1,
       :question_id => 1,
       :level => 1,
-      :selected_answer_index => 1
+      :selected_answer_identifier => "Q1A1"
     ))
   end
 
@@ -18,7 +18,7 @@ describe "exams/edit" do
       assert_select "input#exam_user_id", :name => "exam[user_id]"
       assert_select "input#exam_question_id", :name => "exam[question_id]"
       assert_select "input#exam_level", :name => "exam[level]"
-      assert_select "input#exam_selected_answer_index", :name => "exam[selected_answer_index]"
+      assert_select "input#exam_selected_answer_identifier", :name => "exam[selected_answer_identifier]"
     end
   end
 end

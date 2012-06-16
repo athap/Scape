@@ -4,7 +4,6 @@
   <tr>
     <th>Identifier</th>
     <th>Description</th>
-    <th>Correct answer index</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,7 +13,6 @@
   <tr>
     <td><%= question.identifier %></td>
     <td><%= question.description %></td>
-    <td><%= question.correct_answer_index %></td>
     <td><%= link_to 'Show', question %></td>
     <td><%= link_to 'Edit', edit_question_path(question) %></td>
     <td><%= link_to 'Destroy', question, confirm: 'Are you sure?', method: :delete %></td>

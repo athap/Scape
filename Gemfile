@@ -11,6 +11,9 @@ gem 'rails', '3.2.1'
 gem 'jquery-rails'
 gem 'pg'
 gem 'bootstrap-sass', '2.0.0'
+gem 'will_paginate', '3.0.3'
+gem 'bootstrap-will_paginate', '0.0.6'
+gem 'faker', '1.0.1'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -45,6 +48,7 @@ end
 group :test do
 	gem 'shoulda-matchers', '>= 1.0.0'
   gem 'capybara', '1.1.2'
+  gem 'factory_girl_rails', '1.4.0'
 end
 
 # To use ActiveModel has_secure_password

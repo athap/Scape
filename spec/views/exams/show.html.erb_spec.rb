@@ -6,7 +6,7 @@ describe "exams/show" do
       :user_id => 1,
       :question_id => 2,
       :level => 3,
-      :selected_answer_index => 4
+      :selected_answer_identifier => "Q1A2"
     ))
   end
 
@@ -16,6 +16,6 @@ describe "exams/show" do
     rendered.should match(/1/)
     rendered.should match(/2/)
     rendered.should match(/3/)
-    rendered.should match(/4/)
+    rendered.should match(/Q1A2/)
   end
 end

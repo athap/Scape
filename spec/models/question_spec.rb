@@ -21,9 +21,8 @@ describe Question do
   	it { should have_many(:answers) }
   end
 
-  describe "should validate presence of identifier, description and correct_answer_index" do
+  describe "should validate presence of identifier, description" do
   	it { should validate_presence_of(:identifier) }
-  	it { should validate_presence_of(:description) }
-  	it { should validate_presence_of(:correct_answer_identifier) }
+  	it { should validate_presence_of(:description) }	
   end
 end

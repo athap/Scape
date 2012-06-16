@@ -5,7 +5,6 @@
     <th>Description</th>
     <th>Score</th>
     <th>Feedback</th>
-    <th>Index</th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,8 +14,7 @@
   <tr>
     <td><%= answer.description %></td>
     <td><%= answer.score %></td>
-    <td><%= answer.feedback %></td>
-    <td><%= answer.index %></td>
+    <td><%= answer.feedback %></td>   
     <td><%= link_to 'Show', answer %></td>
     <td><%= link_to 'Edit', edit_answer_path(answer) %></td>
     <td><%= link_to 'Destroy', answer, confirm: 'Are you sure?', method: :delete %></td>

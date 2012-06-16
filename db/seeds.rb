@@ -12,6 +12,7 @@ def add_teachers(name, school, state)
 end
 
 add_teachers("Stephanie Kawamura", "InTech", "UT")
+add_teachers("Others", "Others", "UT")
 
 def add_question(identifier, desc, correct_ans_identifier)
 	puts "Adding question with identifier " + identifier

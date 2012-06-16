@@ -5,7 +5,7 @@
     <th>User</th>
     <th>Question</th>
     <th>Level</th>
-    <th>Selected answer index</th>
+    <th>Selected answer identifier</th>
     <th></th>
     <th></th>
     <th></th>
@@ -16,7 +16,7 @@
     <td><%= exam.user_id %></td>
     <td><%= exam.question_id %></td>
     <td><%= exam.level %></td>
-    <td><%= exam.selected_answer_index %></td>
+    <td><%= exam.selected_answer_identifier %></td>
     <td><%= link_to 'Show', exam %></td>
     <td><%= link_to 'Edit', edit_exam_path(exam) %></td>
     <td><%= link_to 'Destroy', exam, confirm: 'Are you sure?', method: :delete %></td>

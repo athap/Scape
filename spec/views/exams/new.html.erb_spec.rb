@@ -18,7 +18,6 @@ describe "exams/new" do
       assert_select "input#exam_user_id", :name => "exam[user_id]"
       assert_select "input#exam_question_id", :name => "exam[question_id]"
       assert_select "input#exam_level", :name => "exam[level]"
-      assert_select "input#exam_selected_answer_index", :name => "exam[selected_answer_index]"
     end
   end
 end

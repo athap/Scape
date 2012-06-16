@@ -4,8 +4,7 @@ describe "questions/new" do
   before(:each) do
     assign(:question, stub_model(Question,
       :identifier => "MyString",
-      :description => "MyString",
-      :correct_answer_index => 1
+      :description => "MyString"
     ).as_new_record)
   end
 
@@ -16,7 +15,6 @@ describe "questions/new" do
     assert_select "form", :action => questions_path, :method => "post" do
       assert_select "input#question_identifier", :name => "question[identifier]"
       assert_select "input#question_description", :name => "question[description]"
-      assert_select "input#question_correct_answer_index", :name => "question[correct_answer_index]"
     end
   end
 end

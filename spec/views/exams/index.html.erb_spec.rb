@@ -6,14 +6,12 @@ describe "exams/index" do
       stub_model(Exam,
         :user_id => 1,
         :question_id => 2,
-        :level => 3,
-        :selected_answer_index => 4
+        :level => 3
       ),
       stub_model(Exam,
         :user_id => 1,
         :question_id => 2,
-        :level => 3,
-        :selected_answer_index => 4
+        :level => 3
       )
     ])
   end
@@ -24,6 +22,5 @@ describe "exams/index" do
     assert_select "tr>td", :text => 1.to_s, :count => 2
     assert_select "tr>td", :text => 2.to_s, :count => 2
     assert_select "tr>td", :text => 3.to_s, :count => 2
-    assert_select "tr>td", :text => 4.to_s, :count => 2
   end
 end

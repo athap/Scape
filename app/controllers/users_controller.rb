@@ -3,9 +3,9 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @teachers = Teacher.all(:order => 'created_at DESC')
-    #@users = User.all(:order => 'created_at DESC')
+    
     most_recent_teacher = @teachers.first
-    @users = most_recent_teacher.users
+    @users = most_recent_teacher.users    
 
     #@exams = most_recent_user.exams if most_recent_user
     @exams = @users.first.exams if @users.first
