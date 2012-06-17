@@ -22,13 +22,5 @@ describe "Users" do
     before { visit users_path }
 
     it { should have_selector('a', :content => teacher.name) }
-    
-    it { should have_selector('div.pagination') }
-
-    it "should list all teachers" do
-      Teacher.paginate(:page => 1).each do |teacher|
-        page.should have_selector('a', :content => teacher.name)
-      end
-    end
   end
 end

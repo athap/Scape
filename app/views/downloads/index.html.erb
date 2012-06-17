@@ -1,0 +1,58 @@
+<div class="center hero-unit">
+  <h1>Downloads</h1>
+</div>
+
+<div class="download-text">
+		<strong>Download Teachers Data As Excel</strong>
+</div>
+
+<div class="download-button">
+		<%= button_to "Download Teachers Data", 
+			downloads_export_teachers_path(:name => "teachers"),
+			:class => "btn btn-primary btn-large"	 
+		%>
+</div>
+
+<div class="download-text">
+		<strong>Download Students Data As Excel</strong>
+</div>
+
+<div class="download-button">
+		<%= button_to "Download Students Data ", 
+			downloads_export_students_path(:name => "students"),
+			:class => "btn btn-primary btn-large"	 
+		%>
+</div>
+
+<div class="download-text">
+		<strong>Download Quizzes Data As Excel</strong>
+</div>
+
+<div class="download-button">
+		<%= button_to "Download Exams Data    ", 
+			downloads_export_exams_path(:name => "exams"),
+			:class => "btn btn-primary btn-large"	 
+		%>
+</div>
+
+<div class="download-text">
+		<strong>Download Questions Data As Excel</strong>
+</div>
+
+<div class="download-button">
+		<%= button_to "Download Questions Data", 
+			downloads_export_questions_path(:name => "questions"),
+			:class => "btn btn-primary btn-large"	 
+		%>
+</div>
+
+<div class="download-text">
+		<strong>Download Answers Data As Excel</strong> 
+</div>
+
+<div class="download-button">
+		<%= button_to "Download Answers Data   ", 
+			downloads_export_answers_path(:name => "answers"),
+			:class => "btn btn-primary btn-large"	 
+		%>
+</div>

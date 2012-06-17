@@ -1,0 +1,18 @@
+<table border="1">
+  <tr>
+    <th>Id</th>
+    <th>Username</th>
+    <th>Teacher Id</th>
+    <th>Created At</th>
+    <th>Updated At</th>
+  </tr>
+  <% @users.each do |u| %>
+  <tr>
+   <td><%= u.id %></td> 
+   <td><%= u.username %></td>
+   <td><%= u.teacher_id %></td>
+   <td><%= u.created_at %></td>
+   <td><%= u.updated_at %></td>
+  <% end %>
+ </tr>
+</table>

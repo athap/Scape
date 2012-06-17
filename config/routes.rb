@@ -10,6 +10,13 @@ Scape::Application.routes.draw do
 
   root :to => 'users#index'
 
+  match '/downloads', :to => 'downloads#index'
+  match '/downloads/export_teachers', :to => 'downloads#export_teachers'
+  match '/downloads/export_students', :to => 'downloads#export_students'
+  match '/downloads/export_exams', :to => 'downloads#export_exams'
+  match '/downloads/export_questions', :to => 'downloads#export_questions'
+  match '/downloads/export_answers', :to => 'downloads#export_answers'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

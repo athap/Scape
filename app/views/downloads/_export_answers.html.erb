@@ -1,0 +1,21 @@
+<table border="1">
+  <tr>
+    <th>Id</th>
+    <th>Description</th>
+    <th>Score</th>
+    <th>Feedback</th>    
+    <th>Created At</th>
+    <th>Updated At</th>
+  </tr>
+
+<% @answers.each do |answer| %>
+  <tr>
+    <td><%= answer.id %></td>
+    <td><%= answer.description %></td>
+    <td><%= answer.score %></td>
+    <td><%= answer.feedback %></td>
+    <td><%= answer.created_at %></td>
+    <td><%= answer.updated_at %></td>
+  </tr>
+<% end %>
+</table>

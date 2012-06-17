@@ -1,0 +1,23 @@
+<table border="1">
+  <tr>
+    <th>Id</th>
+    <th>User_Id</th>
+    <th>Question_Id</th>
+    <th>Level</th>
+    <th>Selected answer identifier</th>
+    <th>Created At</th>
+    <th>Updated At</th>
+  </tr>
+
+<% @exams.each do |exam| %>
+  <tr>
+    <td><%= exam.id %></td>
+    <td><%= exam.user_id %></td>
+    <td><%= exam.question_id %></td>
+    <td><%= exam.level %></td>
+    <td><%= exam.selected_answer_identifier %></td>
+    <td><%= exam.created_at %></td>
+    <td><%= exam.updated_at %></td>
+  </tr>
+<% end %>
+</table>

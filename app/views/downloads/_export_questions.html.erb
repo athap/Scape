@@ -1,0 +1,21 @@
+<table border="1">
+	<tr>
+		<th>Id</th>
+    <th>Identifier</th>
+    <th>Description</th>
+    <th>Correct Answer Identifier</th>    
+    <th>Created At</th>
+    <th>Updated At</th>
+  </tr>
+
+<% @questions.each do |question| %>
+  <tr>
+    <td><%= question.id %></td>
+    <td><%= question.identifier %></td>
+    <td><%= question.description %></td>
+    <td><%= question.correct_answer_identifier %></td>
+    <td><%= question.created_at %></td>
+    <td><%= question.updated_at %></td>
+  </tr>
+<% end %>
+</table>
