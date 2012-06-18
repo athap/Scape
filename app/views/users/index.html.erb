@@ -8,12 +8,14 @@
       <tr>
         <th>Teachers</th>
       </tr>
-    </thead>
-    <tbody>
-      <%= render :partial => 'teachers', :collection => @teachers, :as => :teacher %>
-    </tbody> 
+    </thead>    
+    <tbody id="teachers-list">
+      <%= render :partial => 'teachers', :collection => @teachers, :as => :teacher %>      
+    </tbody>        
   </table>  
+  <%= will_paginate @teachers %>
 </div>
+
 
 <div class="users-table table table-striped">
   <table>

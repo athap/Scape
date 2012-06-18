@@ -12,6 +12,7 @@ gem 'jquery-rails'
 gem 'pg'
 gem 'bootstrap-sass', '2.0.0'
 gem 'faker', '1.0.1'
+gem 'will_paginate', '3.0.3'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
