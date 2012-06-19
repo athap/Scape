@@ -1,9 +1,0 @@
-$('#teachers-list').append('<%= j (render :partial => 'teachers', :collection => @teachers, :as => :teacher)%>');
-
-<% if @teachers.next_page %>
-  $('.pagination').replaceWith('<%= j will_paginate @teachers %>');
-<% else %>
-  $('.pagination').remove();
-<% end %>
-
-<% sleep 1 %>

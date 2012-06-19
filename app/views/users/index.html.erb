@@ -10,10 +10,9 @@
       </tr>
     </thead>    
     <tbody id="teachers-list">
-      <%= render :partial => 'teachers', :collection => @teachers, :as => :teacher %>      
+      <%= render :partial => 'teachers', :collection => @teachers, :as => :teacher %>     
     </tbody>        
-  </table>  
-  <%= will_paginate @teachers %>
+  </table>
 </div>
 
 
@@ -25,8 +24,7 @@
       </tr>
     </thead>
     <tbody id="users">
-      <%= render @users %>
-      
+      <%= render @users %>      
     </tbody> 
   </table>  
 </div>

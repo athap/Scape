@@ -2,8 +2,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @teachers = Teacher.paginate(:page => params[:page],
-      :per_page => 10).all(:order => 'created_at DESC')
+    @teachers = Teacher.all(:order => 'created_at DESC')
     
     most_recent_teacher = @teachers.first
     @users = most_recent_teacher.users    
@@ -13,7 +12,6 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       format.html #
-      format.js
       format.json { render json: @users }
 
     end
