@@ -1,25 +1,19 @@
-<h1>Listing questions</h1>
+<div class="center hero-unit">
+  <h1>Listing Questions</h1>
+</div>
 
-<table>
-  <tr>
-    <th>Identifier</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class=table table-striped>
+  <table>
+    <tr>
+      <th>Description</th>
+      <th>Overall Analysis</th>
+    </tr>
 
-<% @questions.each do |question| %>
-  <tr>
-    <td><%= question.identifier %></td>
-    <td><%= question.description %></td>
-    <td><%= link_to 'Show', question %></td>
-    <td><%= link_to 'Edit', edit_question_path(question) %></td>
-    <td><%= link_to 'Destroy', question, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Question', new_question_path %>
+  <% @questions.each do |question| %>
+    <tr>
+      <td><%= question.description %></td>
+      <td></td>
+    </tr>
+  <% end %>
+  </table>
+</div>

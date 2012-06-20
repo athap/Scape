@@ -7,6 +7,7 @@ Scape::Application.routes.draw do
   resources :questions
 
   resources :users
+  resources :downloads
 
   root :to => 'users#index'
 
