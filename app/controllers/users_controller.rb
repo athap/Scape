@@ -40,4 +40,24 @@ class UsersController < ApplicationController
       format.html { render :status => 200, :text => 'done' }
     end
   end
+
+  def edit
+    respond_to do |format|
+      format.html { render :text => "You don't have permission to view this" }
+    end
+  end
+
+  def update
+    respond_to do |format|
+      format.html { render :text => "You don't have permission to view this" }
+    end
+  end
+
+  # DELETE /answers/1
+  # DELETE /answers/1.json
+  def destroy
+    respond_to do |format|
+      format.html { render :text => "You don't have permission to view this" }
+    end
+  end
 end
