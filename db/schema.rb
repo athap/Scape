@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120613171006) do
+ActiveRecord::Schema.define(:version => 20120620023502) do
 
   create_table "answers", :force => true do |t|
     t.string   "description"
@@ -50,9 +50,10 @@ ActiveRecord::Schema.define(:version => 20120613171006) do
 
   create_table "users", :force => true do |t|
     t.string   "username"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.integer  "teacher_id"
+    t.integer  "total_score"
   end
 
 end

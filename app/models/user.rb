@@ -2,11 +2,12 @@
 #
 # Table name: users
 #
-#  id         :integer         not null, primary key
-#  username   :string(255)
-#  created_at :datetime        not null
-#  updated_at :datetime        not null
-#  teacher_id :integer
+#  id          :integer         not null, primary key
+#  username    :string(255)
+#  created_at  :datetime        not null
+#  updated_at  :datetime        not null
+#  teacher_id  :integer
+#  total_score :integer
 #
 
 class User < ActiveRecord::Base
