@@ -1,1 +1,9 @@
-This is the data collection app for Scape game. It will collect quiz responses of the students playing Scape
+This is the data collection app for Scape game. 
+It collects quiz responses of the students playing the game.
+
+Data visualization - Pie chart representing overall analysis of questions like how many
+answered it correctly, semi correctly and incorrectly
+
+Downloads - Data can be downloaded as xlf files for further analysis
+
+d3.v2.js is awesome
