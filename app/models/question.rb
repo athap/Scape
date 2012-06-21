@@ -27,6 +27,35 @@ class Question < ActiveRecord::Base
 		get_answer_from_identifier(self.correct_answer_identifier)
 	end
 
+	def total_attempts
+		self.exams.count.to_f
+	end
+
+	def correct_attempts_percent
+		count = 0.0
+		self.exams.map do |exam|
+			count = count + 1 if(exam.is_correct?(self.correct_answer_identifier))
+		end
+		convert_to_percent(count)
+	end
+
+	def semi_correct_attempts_percent
+		semi_correct_ans = self.answers.semicorrect.first.identifier
+		count = 0.0
+		
+		self.exams.map do |exam|
+			count = count + 1 if(exam.is_semi_correct?(semi_correct_ans))
+		end
+		convert_to_percent(count)
+	end
+
+	def convert_to_percent(count)
+		count = count /self.total_attempts
+		count.round(2)
+	end
+
+
+
 	private
 
 	def get_answer_from_identifier(identifier)

@@ -1,3 +1,12 @@
 // Place all the styles related to the Questions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.correct-exams {
+  background-color:green;
+}
+.semicorrect-exams {
+	background-color:yellow;
+}
+.incorrect-exams {
+	background-color:red;
+}

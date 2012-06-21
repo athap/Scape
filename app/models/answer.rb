@@ -15,4 +15,8 @@
 class Answer < ActiveRecord::Base
 	belongs_to :question
 	validates :description, :score, :feedback, :identifier, :presence => true 
+
+	scope :correct, where(:score => 2)
+	scope :semicorrect, where(:score => 1)
+	scope :incorrect, where(:score => 0)
 end

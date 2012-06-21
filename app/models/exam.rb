@@ -39,7 +39,13 @@ class Exam < ActiveRecord::Base
     @selected_answer.score
   end
 
+  def is_correct?(correct_ans)
+    return self.selected_answer_identifier.eql?(correct_ans)
+  end
 
+  def is_semi_correct?(semi_correct_ans)    
+    return self.selected_answer_identifier.eql?(semi_correct_ans)
+  end
 
   def self.write(level, quiz, user)
   	exam_arr = quiz.split(':')

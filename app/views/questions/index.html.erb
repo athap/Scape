@@ -1,19 +1,99 @@
+<script type="text/javascript">
+  function piechart(id, correct, semicorrect) {
+    var svg_parent = "#" + id;
+    var correct = parseFloat(correct);
+    var semicorrect = parseFloat(semicorrect);
+    var incorrect = 1 - (correct + semicorrect);    
+
+    var width = 80,
+    height = 80,
+    outerRadius = Math.min(width, height) / 2,
+    innerRadius = outerRadius * .1,
+    data = [],
+    color = d3.scale.category20(),
+    donut = d3.layout.pie(),
+    arc = d3.svg.arc().innerRadius(innerRadius).outerRadius(outerRadius);
+    data[0] = correct;
+    data[1] = semicorrect;
+    data[2] = incorrect;
+    var vis = d3.select(svg_parent)
+    .append("svg")
+    .data([data])
+    .attr("width", width)
+    .attr("height", height);
+
+    var arcs = vis.selectAll("g.arc")
+    .data(donut)
+    .enter().append("g")
+    .attr("class", "arc")
+    .attr("transform", "translate(" + outerRadius + "," + outerRadius + ")");
+
+    arcs.append("path")
+    .attr("fill", function(d, i) { 
+      if(i == 0)
+        return "green";
+      else if (i == 1)
+        return "yellow";
+      else
+        return "red"
+
+    })
+    .attr("d", arc);
+
+    arcs.append("text")
+    .attr("transform", function(d) {
+      return "translate(" + arc.centroid(d) + ")"; 
+    })
+    .attr("dy", ".35em")
+    .attr("text-anchor", "middle")
+    .attr("display", function(d) { return d.value > .15 ? null : "none"; })
+    .text(function(d, i) { return d.value.toFixed(2); });
+  };
+  function add_charts() {
+    $("td.pie-chart").each(function(index) {
+      piechart(
+        $(this).attr('id'),
+        $(this).attr("data-correct"),
+        $(this).attr("data-semicorrect")
+      );
+    })
+  }    
+</script>
+
 <div class="center hero-unit">
   <h1>Listing Questions</h1>
 </div>
 
-<div class=table table-striped>
-  <table>
+
+<div class="row">
+  <div class="span2">
+    <label class='legends'>Legends</label>
+  </div>
+  <div class="span2">
+    <label class='correct-exams'>correct</label>
+  </div>
+  <div class="span2">
+    <label class='semicorrect-exams'>semicorrect</label>
+  </div>
+  <div class="span2">
+    <label class='incorrect-exams'>incorrect</label>
+  </div>
+</div>
+<br>
+
+  <table class="table table-striped">
     <tr>
       <th>Description</th>
       <th>Overall Analysis</th>
     </tr>
-
-  <% @questions.each do |question| %>
-    <tr>
-      <td><%= question.description %></td>
-      <td></td>
-    </tr>
-  <% end %>
+    </thead>    
+    <tbody id="teachers-list">
+      <%= render :partial => @questions %>
+    </tbody>
   </table>
-</div>
+
+
+<script>
+  //call after page loaded
+  window.onload=add_charts; 
+</script>
