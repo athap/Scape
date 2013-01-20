@@ -29,11 +29,12 @@ class UsersController < ApplicationController
   
 #curl --data "teacher=Frankenstein&username=Igor&level=1&quizzes[]=L1Q1:Q1A2&quizzes[]=L1Q2:Q2A4&quizzes[]=L1Q3:Q3A3&quizzes[]=L1Q4:Q4A1&quizzes[]=L1Q5:Q5A3" 127.0.0.1:3000/users
   def create
+    return
     teacher = Teacher.find_by_name(params[:teacher])
     user = User.new(:username => params[:username])
 
     teacher.users << user
-    #@user.save
+    
     user.record_exam(params)
 
     respond_to do |format|
