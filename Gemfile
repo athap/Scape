@@ -21,9 +21,9 @@ gem 'will_paginate', '3.0.3'
 
 
 # for JavaScript runtime in linux os
-# if HOST_OS =~ /linux/i
-# 	gem 'therubyracer', '~> 0.9.10'
-# end
+if HOST_OS =~ /linux/i
+	gem 'therubyracer', '~> 0.9.10'
+end
 
 
 # Gems used only for assets and not required
