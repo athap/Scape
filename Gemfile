@@ -7,7 +7,7 @@ ruby '1.9.3'
 
 gem 'heroku'
 gem 'taps'
-gem 'rails', '3.2.1'
+gem 'rails', '3.2.11'
 gem 'jquery-rails'
 gem 'pg'
 gem 'bootstrap-sass', '2.0.0'
